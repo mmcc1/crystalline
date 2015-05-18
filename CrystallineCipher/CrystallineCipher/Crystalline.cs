@@ -5,66 +5,8 @@ namespace CrystallineCipher
 {
     #region Technical Notes
     /* 
-     * Key strength: 
-     * Arbitrary
+     * Recommend practice is to compress all files prior to encrypting
      * 
-     * Lowest recommended standard for Key and salt:
-     * 16Kb - 131072 bits
-     * 
-     * Recommended practice around keys and salt:
-     * Random length > 16KB
-     * 
-     * Source for truely random (atmospheric noise) bytes for passphrase and salt:
-     * https://www.random.org/bytes/
-     * 
-     * Permuations in output ciphertext:
-     * ((256*256)^(bits in plaintext) + (256*256)^(bytes in plaintext)) * rounds
-     * 
-     * Known Weaknesses:
-     * None.
-     * 
-     * Example Randomness Tests (similar to random source derived from radioactive 
-     * decay):
-     * 
-     * ENT
-     * http://www.fourmilab.ch/random/
-     * 
-     * 
-     * Entropy = 7.999571 bits per byte.
-     * 
-     * Optimum compression would reduce the size
-     * of this 432138 byte file by 0 percent.
-     * 
-     * Chi square distribution for 432138 samples is 256.72, and randomly
-     * would exceed this value 45.80 percent of the times.
-     * 
-     * Arithmetic mean value of data bytes is 127.6506 (127.5 = random).
-     * Monte Carlo value for Pi is 3.139497105 (error 0.07 percent).
-     * Serial correlation coefficient is 0.001534 (totally uncorrelated = 0.0).
-     * 
-     * 
-     * Entropy = 7.999922 bits per byte.
-     * Optimum compression would reduce the size
-     * of this 2345986 byte file by 0 percent.
-     * 
-     * Chi square distribution for 2345986 samples is 252.18, and randomly
-     * would exceed this value 53.81 percent of the times.
-     * 
-     * Arithmetic mean value of data bytes is 127.5545 (127.5 = random).
-     * Monte Carlo value for Pi is 3.137896199 (error 0.12 percent).
-     * Serial correlation coefficient is 0.000181 (totally uncorrelated = 0.0).
-     * 
-     * 
-     * Entropy = 7.999925 bits per byte.
-     * Optimum compression would reduce the size 
-     * of this 2345986 byte file by 0 percent.
-     * 
-     * Chi square distribution for 2345986 samples is 245.20, and randomly
-     * would exceed this value 65.91 percent of the times.
-     * 
-     * Arithmetic mean value of data bytes is 127.4954 (127.5 = random).
-     * Monte Carlo value for Pi is 3.139205672 (error 0.08 percent).
-     * Serial correlation coefficient is -0.001167 (totally uncorrelated = 0.0).
      */
     #endregion
 
@@ -350,14 +292,14 @@ namespace CrystallineCipher
                 int newLocation = (currentLocation + offSet) % data.Length;
 
                 if (!isDecrypt)
-                    data[currentLocation] = XOR(data[currentLocation], true);
+                    data[currentLocation] = data[currentLocation] ^ true;
 
                 bool temp = data[newLocation];
                 data[newLocation] = data[currentLocation];
                 data[currentLocation] = temp;
 
                 if (isDecrypt)
-                    data[currentLocation] = XOR(data[currentLocation], true);
+                    data[currentLocation] = data[currentLocation] ^ true;
             }
             else
             {
@@ -376,14 +318,14 @@ namespace CrystallineCipher
                 }
 
                 if (!isDecrypt)
-                    data[currentLocation] = XOR(data[currentLocation], true);
+                    data[currentLocation] = data[currentLocation] ^ true;
 
                 bool temp = data[newLocation];
                 data[newLocation] = data[currentLocation];
                 data[currentLocation] = temp;
 
                 if (isDecrypt)
-                    data[currentLocation] = XOR(data[currentLocation], true);
+                    data[currentLocation] = data[currentLocation] ^ true;
             }
         }
         #endregion
@@ -499,14 +441,6 @@ namespace CrystallineCipher
         }
 
         #endregion
-
-        public static bool XOR(bool value1, bool value2)
-        {
-            if (value1 != value2)
-                return true;
-            else
-                return false;
-        }
 
         #endregion
     }
