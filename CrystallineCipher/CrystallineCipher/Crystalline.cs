@@ -11,7 +11,7 @@ namespace CrystallineCipher
     #endregion
 
     /// <summary>
-    /// Crystalline Symmetric Cipher
+    /// Crystalline Symmetric Cipher - Beta 3
     /// 
     /// Copyright - Mark McCarron 2015 - All rights reserved.
     /// 
@@ -33,9 +33,13 @@ namespace CrystallineCipher
         /// <param name="key">The passphrase</param>
         /// <param name="salt">The salt</param>
         /// <returns>Encrypted Data</returns>
-        public static byte[] Encrypt(byte[] inputData, byte[] key, byte[] salt)
+        public static byte[] Encrypt(byte[] inputData, byte[] key, byte[] salt, int iv)
         {
-            return CrystallineEncrypt(inputData, key, salt, CrysallineDepth());
+            int a = SelectValue(ref key, iv);
+            int b = SelectValue(ref salt, a);
+            int c = SelectValue(ref key, b);
+            int d = SelectValue(ref salt, c);
+            return CrystallineEncrypt(inputData, key, salt, ComputeRounds(a, b, c, d));
         }
 
         /// <summary>
@@ -45,22 +49,39 @@ namespace CrystallineCipher
         /// <param name="key">The passphrase</param>
         /// <param name="salt">The salt</param>
         /// <returns>Decrypted Data</returns>
-        public static byte[] Decrypt(byte[] cipherData, byte[] key, byte[] salt)
+        public static byte[] Decrypt(byte[] cipherData, byte[] key, byte[] salt, int iv)
         {
-            return CrystallineDecrypt(cipherData, key, salt, CrysallineDepth());
+            int a = SelectValue(ref key, iv);
+            int b = SelectValue(ref salt, a);
+            int c = SelectValue(ref key, b);
+            int d = SelectValue(ref salt, c);
+            return CrystallineDecrypt(cipherData, key, salt, ComputeRounds(a, b, c, d));
         }
 
         #endregion
 
-        #region Crystalline Depth
+        #region Compute Rounds
 
         /// <summary>
-        /// Compute Rounds - Can be varied for specific files/key/salt - But test for randomness
+        /// Compute Rounds: 10-27
         /// </summary>
         /// <returns>Number of Rounds</returns>
-        private static int CrysallineDepth()
+        private static int ComputeRounds(int keyByteValue1, int keyByteValue2, int keyByteValue3, int keyByteValue4)
         {
-            return 8;
+            int a = 0;
+            try
+            {
+                a = ((keyByteValue1 / 10) + (keyByteValue2 / 10) + (keyByteValue3 / 10) + (keyByteValue4 / 10)) / 4;
+            }
+            catch 
+            {
+                return 27;
+            } 
+
+            if (a < 10)
+                return 10 + a;
+            else
+                return a;
         }
 
         #endregion
@@ -331,6 +352,21 @@ namespace CrystallineCipher
         #endregion
 
         #region Helper Functions
+
+        #region Select a value from an array
+
+        /// <summary>
+        /// Select a value from an array
+        /// </summary>
+        /// <param name="data">Array</param>
+        /// <param name="keyByteValue">Value</param>
+        /// <returns>value from array</returns>
+        private static int SelectValue(ref byte[] data, int keyByteValue)
+        {
+            return data[keyByteValue % data.Length];
+        }
+
+        #endregion
 
         #region Initialise Decode Values
 
