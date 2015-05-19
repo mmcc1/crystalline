@@ -13,14 +13,15 @@ namespace CrystallineCipher
     /// <summary>
     /// Crystalline Symmetric Cipher - Beta 3
     /// 
-    /// Copyright - Mark McCarron 2015 - All rights reserved.
-    /// 
     /// Crystalline encrypts by manipulating the order of bits and bytes.  
     /// 
     /// The cipher is designed to resist cryptanalysis through information loss, 
     /// rather than hard to solve mathematical problems.  As such, attacks on the
     /// cipher will be in the form of side-channel attacks.  Information loss
     /// places this cipher in the same category as a one-time pad.
+    /// 
+    /// Copyright - Mark McCarron 2015
+    /// License: MIT License
     /// </summary>
     public static class Crystalline
     {
