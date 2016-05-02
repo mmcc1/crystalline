@@ -1,20 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystallineCipher", "CrystallineCipher\CrystallineCipher.csproj", "{37CA7DED-B467-4E3C-AFD6-CB283F487946}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystallineCipherTest", "CrystallineCipher\CrystallineCipherTest.csproj", "{37CA7DED-B467-4E3C-AFD6-CB283F487946}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystallineCipherLib", "CrystallineCipherLib\CrystallineCipherLib.csproj", "{25BF5B0E-99BE-4CB2-AB7F-252521F263E0}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs30
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = CrystallineCipher\\CrystallineCipher.csproj
-		SccProjectName1 = CrystallineCipher
-		SccLocalPath1 = CrystallineCipher
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -24,8 +17,24 @@ Global
 		{37CA7DED-B467-4E3C-AFD6-CB283F487946}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37CA7DED-B467-4E3C-AFD6-CB283F487946}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37CA7DED-B467-4E3C-AFD6-CB283F487946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25BF5B0E-99BE-4CB2-AB7F-252521F263E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25BF5B0E-99BE-4CB2-AB7F-252521F263E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25BF5B0E-99BE-4CB2-AB7F-252521F263E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25BF5B0E-99BE-4CB2-AB7F-252521F263E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs30
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CrystallineCipherLib\\CrystallineCipherLib.csproj
+		SccProjectName1 = CrystallineCipherLib
+		SccLocalPath1 = CrystallineCipherLib
+		SccProjectUniqueName2 = CrystallineCipher\\CrystallineCipherTest.csproj
+		SccProjectName2 = CrystallineCipher
+		SccLocalPath2 = CrystallineCipher
 	EndGlobalSection
 EndGlobal
