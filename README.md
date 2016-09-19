@@ -1,9 +1,5 @@
-Project Description
-An information theoretically secure symmetric cipher.
+Crystalline Cipher - An information theoretically secure symmetric cipher.
 
-Current Release: Version 1.0
-
-Crystalline Cipher
 C# Reference Implementation
 
 Project Overview
