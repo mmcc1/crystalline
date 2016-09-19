@@ -1,4 +1,4 @@
-Crystalline Cipher - An information theoretically secure symmetric cipher.
+# Crystalline Cipher - An information theoretically secure symmetric cipher.
 
 C# Reference Implementation
 
