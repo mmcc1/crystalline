@@ -1,4 +1,6 @@
-# Crystalline Cipher - An information theoretically secure symmetric cipher.
+# Crystalline Cipher 
+# Crystalline Lattice Cipher
+- A set of information theoretically secure symmetric ciphers.
 
 C# Reference Implementation
 
@@ -7,9 +9,8 @@ Cystalline Cipher is a symmetric cipher that performs transposition of bits and 
 
 Unlike many ciphers, Crystalline operates on an entire file and does not require padding operations or compression. Crystalline also employs arbitrary key sizes, although recommended practice is to use at minimum 16KB keys and salts (131072 bits) based upon truely random byte sources (such as atmospheric noise, etc.)
 
+Crystalline Lattice employs many key files, changing the information loss pattern applied to the plaintext whereas the basic original cipher merely used a single key.
 
-Please note that a recent senate draft bill, if it becomes law, would make Crystalline an illegal product within the US as it information theoretically secure (or unbreakable).
-http://hosted.ap.org/dynamic/stories/U/US_CONGRESS_ENCRYPTION?SITE=AP&SECTION=HOME&TEMPLATE=DEFAULT&CTIME=2016-04-08-14-11-09
 
 Source for truely random (atmospheric noise) bytes for passphrase and salt:
 https://www.random.org/bytes/
