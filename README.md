@@ -1,6 +1,6 @@
 # Crystalline Cipher 1 & 2
 
-A set of information theoretically secure symmetric ciphers. C# Reference Implementation.
+A set of information theoretically secure symmetric ciphers. C# (Framework 4.7.2 and .NET Standard 2.0) Reference Implementation.
 
 Project Overview
 
