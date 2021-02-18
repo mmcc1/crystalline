@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Crystalline.cs" />
+    <Compile Include="Crystalline2.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

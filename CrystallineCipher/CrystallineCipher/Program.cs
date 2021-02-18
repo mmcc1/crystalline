@@ -10,12 +10,24 @@ namespace CrystallineCipher
         {
             int rounds = 8;
 
+            //Crystalline 2
+            Console.WriteLine("Crystalline 2");
             Console.WriteLine("Encrypting plain text...");
-            File.WriteAllBytes(@"..\..\TestFiles\ciphertext.txt", Crystalline.Encrypt(File.ReadAllBytes(@"..\..\TestFiles\plaintext.txt"), File.ReadAllBytes(@"..\..\TestFiles\key.txt"), File.ReadAllBytes(@"..\..\TestFiles\salt.txt"), rounds));
+            File.WriteAllBytes(@"..\..\TestFiles\ciphertext.txt", Crystalline2.Encrypt(File.ReadAllBytes(@"..\..\TestFiles\plaintext.txt"), File.ReadAllBytes(@"..\..\TestFiles\k.rng"), File.ReadAllBytes(@"..\..\TestFiles\s.rng"), File.ReadAllBytes(@"..\..\TestFiles\s2.rng"), rounds));
 
             Console.WriteLine("Decrypting plain text...");
-            File.WriteAllBytes(@"..\..\TestFiles\deciphered.txt", Crystalline.Decrypt(File.ReadAllBytes(@"..\..\TestFiles\ciphertext.txt"), File.ReadAllBytes(@"..\..\TestFiles\key.txt"), File.ReadAllBytes(@"..\..\TestFiles\salt.txt"), rounds));
+            File.WriteAllBytes(@"..\..\TestFiles\decipheredplaintext.txt", Crystalline2.Decrypt(File.ReadAllBytes(@"..\..\TestFiles\ciphertext.txt"), File.ReadAllBytes(@"..\..\TestFiles\k.rng"), File.ReadAllBytes(@"..\..\TestFiles\s.rng"), File.ReadAllBytes(@"..\..\TestFiles\s2.rng"), rounds));
 
+            /*
+             * Crystalline
+            Console.WriteLine("Crystalline");
+            Console.WriteLine("Encrypting plain text...");
+            File.WriteAllBytes(@"..\..\TestFiles\ciphertext.txt", Crystalline2.Encrypt(File.ReadAllBytes(@"..\..\TestFiles\plaintext.txt"), File.ReadAllBytes(@"..\..\TestFiles\k.rng"), File.ReadAllBytes(@"..\..\TestFiles\s.rng"), rounds));
+
+            Console.WriteLine("Decrypting plain text...");
+            File.WriteAllBytes(@"..\..\TestFiles\decipheredplaintext.txt", Crystalline2.Decrypt(File.ReadAllBytes(@"..\..\TestFiles\ciphertext.txt"), File.ReadAllBytes(@"..\..\TestFiles\k.rng"), File.ReadAllBytes(@"..\..\TestFiles\s.rng"), rounds));
+
+            */
             Console.WriteLine("Complete.  Press any key to continue...");
             Console.ReadKey();
         }

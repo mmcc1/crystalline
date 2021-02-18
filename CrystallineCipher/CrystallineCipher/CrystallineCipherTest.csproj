@@ -50,12 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="TestFiles\k.rng" />
+    <None Include="TestFiles\s.rng" />
+    <None Include="TestFiles\s2.rng" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />
     <Content Include="TestFiles\plaintext.txt" />
-    <Content Include="TestFiles\key.txt" />
-    <Content Include="TestFiles\salt.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CrystallineCipherLib\CrystallineCipherLib.csproj">
