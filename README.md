@@ -40,9 +40,9 @@ Information Loss
 
 Three stages of information loss occur during each round:
 
-1. We loss information on the key and salts
-2. We loss information on the data.
-3. We loss information of previous steps.
+1. We lose information on the key and salts
+2. We lose information on the data.
+3. We lose information of previous steps.
 
 Loss of information in this way increases entropy with each round, until the dominating signal in the ciphertext are the relationships between the random values in the salts and key.
 
