@@ -1,10 +1,9 @@
 # Crystalline Cipher 1 & 2
 
-- A set of information theoretically secure symmetric ciphers.
-
-C# Reference Implementation
+A set of information theoretically secure symmetric ciphers. C# Reference Implementation.
 
 Project Overview
+
 Cystalline Cipher is a symmetric cipher that performs transposition of bits and bytes, rather than hard to reverse mathematics. There are two versions, with the second having an expanded transposition area.  No break has ever been revealed since its creation in May 2015.
 
 Unlike many ciphers, Crystalline operates on an entire file and does not require padding operations. Compression is recommended in certain circumstances and output should always be inspected.  Crystalline employs arbitrary key sizes, although recommended practice is to use at minimum 32KB keys and salts based upon truely random byte sources (such as atmospheric noise, etc.)
@@ -52,7 +51,7 @@ Frequently Asked Questions
 
 Q: I read that Crystalline is an "obviously broken cipher":
 
-A: It has quirks, but nothing which has been demonstrated as exploitable. The acid is test is to decrypt a file and that, so far, has never been achieved.
+A: It has quirks, but nothing which has been demonstrated as exploitable. The acid test is to decrypt a file and that, so far, has never been achieved.
 
 Q: I read that there is no need to introduce a salt:
 
