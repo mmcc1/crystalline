@@ -22,7 +22,7 @@ Steps in a round:
 
 Part A:
 1. Load the plaintext, key and salt files into memory (circular buffer for each).
-2. Calculate the location of the bits to switch based on the formula 'key*salt' (key*salt*salt2 in Crystalline2)
+2. Calculate the location of the bits to switch based on the formula 'key*salt'
 3. Select the current bit index in the plaintext and XOR it with the value 1
 4. Swap the bit with the bit identified in step 2.
 5. Increment the index in the plaintext, key and salt (looping around the buffer necessary)
@@ -30,7 +30,7 @@ Part A:
 
 Part B:
 1. Set indexes of the plaintext, key and salt to 0
-2. Calculate the location of the bytes to switch based on the formula 'key*salt' (key*salt*salt2 in Crystalline2)
+2. Calculate the location of the bytes to switch based on the formula 'key*salt'
 3. Swap the byte with the byte identified in step 2.
 4. Increment the index in the plaintext, key and salt (looping around the buffer necessary)
 5. Repeats steps 2-4 inclusive until EOF (plaintext)
