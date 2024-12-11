@@ -1,4 +1,4 @@
-# Crystalline Cipher 1, 2, 3 4 & 5
+# Crystalline Cipher 1, 2, 3, 4 & 5
 
 A set of information theoretically secure symmetric ciphers designed to thwart analysis or cracking by Quantum computing. C# (Framework 4.8, .NET Standard 2.0 and NET8) Reference Implementation.
 
