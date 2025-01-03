@@ -19,4 +19,7 @@ The source is available under numerous licenses:
 * LGPL v3.0 - http://www.gnu.org/licenses/lgpl-3.0.en.html
 * LGPL v2.1 - http://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
 * GPL v3.0 - http://www.gnu.org/licenses/gpl-3.0.en.html
-* GPL v2.0 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html 
+* GPL v2.0 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+
+Note: 
+A bugfix has been made to the FlipBit method of versions 4 & 5 of the cipher. The method was returning the original byte array as opposed to a modified array. As a result the new code will not decrypt existing encrypted files.  Please dencrypt any files using the older code first, the re-encrypt with the new code. 
