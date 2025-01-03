@@ -287,7 +287,7 @@ namespace CrystallineCipherLib
             byte[] bytes = new byte[revBitArray.Length / 8];
             revBitArray.CopyTo(bytes, 0);
 
-            return data;
+            return bytes;
         }
 
         #endregion
