@@ -1,10 +1,10 @@
-# Crystalline Cipher 1, 2, 3 & 4
+# Crystalline Cipher 1, 2, 3, 4 & 5
 
 A set of information theoretically secure symmetric ciphers designed to thwart analysis or cracking by Quantum computing. C# (Framework 4.8, .NET Standard 2.0 and NET8) Reference Implementation.
 
 Project Overview
 
-Cystalline Cipher is a symmetric cipher series which performs transposition of bits and bytes, rather than hard to reverse mathematics. Unlike many ciphers, Crystalline operates on an entire file and does not require padding operations. Compression of plaintext is recommended. Crystalline employs arbitrary key sizes, although recommended practice is to use at minimum 32KB keys and salts based upon truely random byte sources (such as atmospheric noise, etc.)
+Cystalline Cipher is a symmetric cipher series which performs transposition of bits and bytes, rather than hard to reverse mathematics. Unlike many ciphers, Crystalline operates on an entire file and does not require padding operations. Compression of plaintext is recommended. Crystalline employs arbitrary key sizes, although recommended practice is to use at minimum 32KB keys (64KB from Crystalline 5) and salts based upon truely random byte sources (such as atmospheric noise, etc.)
 
 Source for truely random (atmospheric noise) bytes for passphrase and salt:
 https://www.random.org/bytes/
